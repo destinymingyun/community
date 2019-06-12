@@ -1,10 +1,10 @@
-#·şÎñÆ÷¶Ë¿Ú
+# æœåŠ¡å™¨åŸºæœ¬é…ç½®
 server:
   port: 8080
 
-#spring ÅäÖÃ
+# spring åŸºæœ¬é…ç½®
 spring:
-  # Ä£°åÅäÖÃ
+  # thymeleafé…ç½®
   thymeleaf:
     cache: false
     suffix: .html
