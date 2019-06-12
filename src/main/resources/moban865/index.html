@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>社区管理系统主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="applijewelleryion/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--webfonts-->
+    <link href='#css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='#css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            $().UItoTop({easingType: 'easeOutQuart'});
+        });
+    </script>
+    <!--light-box-files -->
+    <script src="js/modernizr.custom.97074.js"></script>
+    <script src="js/jquery.chocolat.js"></script>
+    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            $('.g-left a').Chocolat();
+        });
+    </script>
+    <!--light-box-files -->
+
+</head>
+<body>
+<!-- header -->
+
+<!-- header-bottom -->
+<div class="header-bottom">
+    <div class="container">
+        <div class="logo">
+            <h1><a href="index.html"> &nbsp 帕绮社区管理</a></h1>
+        </div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!--/.navbar-header-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active" margin-left="100px"><a href="index.html"  >基本情况管理</a></li>
+                    <li><a href="services.html">社区服务管理</a></li>
+                    <li><a href="about.html">民政工作管理</a></li>
+                    <li><a href="gallery.html">综合治理</a></li>
+
+                </ul>
+            </div>
+            <!--/.navbar-collapse-->
+        </nav>
+        <div class="search-box">
+            <div id="sb-search" class="sb-search">
+                <form>
+                    <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search"
+                           id="search">
+                    <input class="sb-search-submit" type="submit" value="">
+                    <span class="sb-icon-search"> </span>
+                </form>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- search-scripts -->
+        <script src="js/classie.js"></script>
+        <script src="js/uisearch.js"></script>
+        <script>
+            new UISearch(document.getElementById('sb-search'));
+        </script>
+        <!-- //search-scripts -->
+
+    </div>
+</div>
+<!-- /header-bottom -->
+
+<!-- header -->
+<!-- banner -->
+<div class="banner" id="home">
+    <div class="container">
+        <section class="slider">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="banner-info">
+                            <h2>欢迎来到帕绮社区</h2>
+                            <p>我们将竭诚提供者最优质的服务，有任何烦恼和问题可以反馈给我们工作人员。</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h2>无悔青春，加入我们的志愿者协会吧！</h2>
+                            <p>帮助他人是一种生活态度，让我们燃烧价值，温暖他人。</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="banner-info">
+                            <h2>和谐小区，由你我做起。</h2>
+                            <p>使用公共设施是您的权力，爱护公共设施是您的义务。</p>
+                            <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FlexSlider -->
+        <script defer="" src="js/jquery.flexslider.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+            });
+            $(window).load(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    start: function (slider) {
+                        $('body').removeClass('loading');
+                    }
+                });
+            });
+        </script>
+        <!-- FlexSlider -->
+
+    </div>
+</div>
+<!-- banner -->
+<!-- offer -->
+<div class="offer">
+    <div class="container">
+        <div class="col-md-8 offer-left">
+            <h3>社区简介</h3>
+            <p>　　帕绮社区座落于建邺区沙洲街道汾河路38号，社区办公地点座落于小区中心路商业房，面积1021?,目前社区管辖莲花新城北苑小区，
+                东至南河，西至绕城公路，南至友谊路，北至绕城公路，占地面积503300?;小区共28栋住宅楼，
+                共入住5107户，现已交付24栋，3547套住房，另有4栋住宅共1560户将于今年9月份交付使用。到目前已入住居民达2000户以上。</p>
+            <p>　　根据区关于社区管理体制改革的有关精神，
+                结合自身实际，采用“社区+物业”的管理模式，在“一委一居一站”组织架构的基础上，
+                还组建了物业服务中心、商业服务中心。由街道副处级领导担任党组织书记，其他各部门共配备了22人。
+                通过进一步整合资源，形成社区、物管共同推进小区建设的格局，为小区居民提供集常规性公共服务和经营性多种服务为一体的全方位、
+                多层次的综合服务。</p>
+            <li><a href="#"><span></span>社区服务，点我了解详情~~</a></li>
+            <li><a href="#"><span></span>民政工作，点我了解情况~~</a></li>
+            <li><a href="#"><span></span>治安处理，点我了解情况~~</a>
+            </li>
+        </div>
+        <div class="col-md-4 offer-ri">
+            <div class="offer-right">
+                <h4>请输入您要寻找的内容</h4>
+                <form>
+                    <input type="text" value="请输入您的邮箱" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Enter Your email';}">
+                    <input type="submit" value="搜索">
+                </form>
+            </div>
+            <img src="images/9.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- offer -->
+<!-- about -->
+<div class="about">
+    <div class="container">
+        <div class="col-md-8 about-right">
+            <h4>最新资讯</h4>
+            <div class="abt-top">
+                <div class="abt-lft">
+                    <img src="images/4.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="abt-rgt">
+                    <h5>下岗福利</h5>
+                    <p>信贷优惠政策。对积极吸纳国有企业下岗职工的中小企业、劳动就业服务企业等就业实体的，
+                        以及下岗职工从事个体经济或组织起来兴办服务型企业的。
+                        </p>
+                    <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-md-4 about-left">
+            <h4>民政工作管理</h4>
+            <ul>
+                <li><a href="#"><span></span> 提供低保管理 </a></li>
+                <li><a href="#"><span></span>残疾人管理</a></li>
+                <li><a href="#"><span></span>社区团体管理</a></li>
+            </ul>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- about -->
+<!-- gallery -->
+<div class="gallery" id="gallery">
+    <div class="container">
+        <div class="gallery-top heading">
+            <h3>探望老人志愿者服务</h3>
+        </div>
+        <div class="gallery-bottom">
+            <div class="grid">
+                <div class="col-md-4 g-left">
+                    <a href="images/7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/7.jpg" alt="">
+                            <figcaption>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/6.jpg" alt="">
+                            <figcaption>
+                            </figcaption>
+
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/5.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="grid">
+                <div class="col-md-4 g-left">
+                    <a href="images/4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/4.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/3.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="col-md-4 g-left">
+                    <a href="images/2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox">
+                        <figure class="effect-apollo">
+                            <img src="images/2.jpg" alt="">
+                            <figcaption>
+
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gallery -->
+<!-- content-mid -->
+<div class="content-mid">
+    <div class="container">
+        <div class="content-mid-top">
+            <h3> 志愿者招聘</h3>
+            <p>欢行公益关于志愿者招募倡议书</p>
+
+        </div>
+        <div class="news">
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>你会觉得自己是个有爱的人，然而满腔大爱却无处可施吗？或者偶尔安静下来，你又感觉是个缺爱的人。</p>
+                <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+            </div>
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>需要得到温暖和关怀，这个时候，你不用吃药，直接来欢行公益吧。欢行公益致力于搭残疾人群与社会沟。</p>
+                <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+            </div>
+            <div class="col-md-4 new-more">
+                <div class="six">
+                    <h4>26<span>AUG</span></h4>
+
+                </div>
+                <p>通的桥梁，向健全人普及基础手语，通过形式多样时尚快乐创新的方式促进普特共融。为了撒播大爱。</p>
+                <a class="hvr-shutter-in-horizontal" href="#">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- content-mid -->
+<!-- footer -->
+<div class="footer" id="contact">
+    <div class="container">
+        <div class="col-md-4 contact-left">
+            <h3>地址</h3>
+            <address>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">P :</abbr> (123) 456-7890
+            </address>
+        </div>
+        <div class="col-md-4 ftr-gd">
+            <h3>关于我们</h3>
+            <ul class="social">
+                <li><a href="#"><i></i></a></li>
+                <li><a href="#"><i class="facebook"></i></a></li>
+                <li><a href="#"><i class="goog"></i> </a></li>
+                <li><a href="#"><i class="lin"></i> </a></li>
+            </ul>
+        </div>
+        <div class="col-md-4 contact-left">
+            <h3>电话</h3>
+            <p>Phone : +1234567890 </p>
+            <p>Fax : +1234567890 </p>
+            <p>Email : <a href="mailto:info@example.com">info@mycompany.com</a></p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!-- footer -->
+<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"> </span></a>
+</body>
+</html>
