@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+/**
+ * 登陆账号类模型
+ */
 public class Account {
     private String account;
     private String password;
