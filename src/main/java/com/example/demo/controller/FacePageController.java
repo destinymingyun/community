@@ -31,9 +31,9 @@ public class FacePageController {
      * 跳转到服务页面
      * @return 服务页面映射
      */
-    @GetMapping("/service")
-    public String goService() {
-        return "face/index";
+    @GetMapping("/services")
+    public String goServices() {
+        return "face/services";
     }
 
     /**
@@ -44,4 +44,11 @@ public class FacePageController {
     public String goContact() {
         return "face/contact";
     }
+
+    @GetMapping("/gallery")
+    public String goGallery() {
+        return "face/gallery";
+    }
+
+
 }
