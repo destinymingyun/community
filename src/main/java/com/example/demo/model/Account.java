@@ -7,6 +7,16 @@ public class Account {
     private String account;
     private String password;
 
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    private int type;
+
     public String getAccount() {
         return account;
     }
@@ -28,6 +38,7 @@ public class Account {
         return "Account{" +
                 "account='" + account + '\'' +
                 ", password='" + password + '\'' +
+                ", type=" + type +
                 '}';
     }
 }
