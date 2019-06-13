@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 前端页面跳转控制器
@@ -49,6 +50,5 @@ public class FacePageController {
     public String goGallery() {
         return "face/gallery";
     }
-
 
 }
