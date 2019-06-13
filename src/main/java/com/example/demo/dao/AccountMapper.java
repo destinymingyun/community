@@ -4,6 +4,6 @@ import com.example.demo.model.Account;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface AccoutMapper {
+public interface AccountMapper {
     int selectAccount(Account account);
 }

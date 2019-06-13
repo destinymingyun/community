@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,9 +50,10 @@
             <h2 class="title1">登陆</h2>
             <div class="widget-shadow">
                 <div class="login-body">
-                    <form action="/loginAccount" method="post">
+                    <form name="account" action="/loginAccount" method="post">
                         <input type="email" class="user" name="account" placeholder="输入您的账号" required="">
                         <input type="password" name="password" class="lock" placeholder="输入您的密码" required="">
+                        <p style="color: red" th:if="${account ne null}">账号或密码错误</p>
                         <div class="forgot-grid">
                             <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>记住账号</label>
 
@@ -61,7 +62,7 @@
                         <input type="submit" name="Sign In" value="登陆">
                         <div class="registration">
                             没有账号 ?
-                            <a class="" href="signup.html">
+                            <a class="" href="/register">
                                 注册新账号
                             </a>
                         </div>
