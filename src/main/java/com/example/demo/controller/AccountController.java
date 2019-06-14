@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.demo.model.Account;
 import com.example.demo.protocol.AccountProtocol;
 import com.example.demo.service.AccountService;
@@ -8,8 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 账号登陆控制
@@ -52,4 +52,12 @@ public class AccountController {
         return "/back/login";
     }
 
+    @PostMapping("/register")
+    @ResponseBody
+    public String register(JSONObject info) {
+        Account account = new Account();
+        account.setAccount((String)info.get("account"));
+        System.out.println("account = " + account);
+        return "aaa";
+    }
 }
