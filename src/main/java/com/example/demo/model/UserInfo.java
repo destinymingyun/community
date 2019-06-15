@@ -8,6 +8,7 @@ public class UserInfo {
     private String id;
     private int age;
     private int sex;
+    private String account;
 
     public int getSex() {
         return sex;
@@ -41,6 +42,14 @@ public class UserInfo {
         this.age = age;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
@@ -48,6 +57,7 @@ public class UserInfo {
                 ", id='" + id + '\'' +
                 ", age=" + age +
                 ", sex=" + sex +
+                ", account='" + account + '\'' +
                 '}';
     }
 }

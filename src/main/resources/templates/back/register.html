@@ -174,6 +174,8 @@
                 "name": $("#name").val(),
                 "age": $("#age").val(),
                 "id": $("#idCard").val(),
+                "sex": $("input[name='sex']:checked").val(),
+                "isHere": $("input[name='is-here']:checked").val(),
                 "appartmentId": $("#appartment-id").val(),
                 "floor": $("#floor").val(),
                 "homeId": $("#home-id").val(),
@@ -182,16 +184,19 @@
             info = {
                 "account": $("#account").val(),
                 "password": $("#password").val(),
+                "sex": $("input[name='sex']:checked").val(),
                 "name": $("#name").val(),
                 "age": $("#age").val(),
                 "id": $("#idCard").val(),
+                "isHere": $("input[name='is-here']:checked").val(),
             };
         }
 
-        alert(JSON.stringify(info))
+        alert(JSON.stringify(info));
         $.post({
             url: "/register",
             dataType: "json",
+            contentType: "application/json",
             data: JSON.stringify(info),
             success: function (data) {
 

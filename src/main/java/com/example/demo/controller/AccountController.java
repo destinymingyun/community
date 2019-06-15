@@ -2,14 +2,14 @@ package com.example.demo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.model.Account;
-import com.example.demo.protocol.AccountProtocol;
+import com.example.demo.model.AddressInfo;
+import com.example.demo.model.UserInfo;
+import com.example.demo.protocol.Protocol;
 import com.example.demo.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 账号登陆控制
@@ -29,14 +29,14 @@ public class AccountController {
     public String login(Account account, Model model) {
         int type = accountService.login(account);
         switch (type) {
-            case AccountProtocol.ERROR:
+            case Protocol.ERROR:
                 return "back/login";
-            case AccountProtocol.USER:
-                account.setType(AccountProtocol.USER);
+            case Protocol.USER:
+                account.setType(Protocol.USER);
                 model.addAttribute("account", account);
                 return "face/index";
-            case AccountProtocol.ADMIN:
-                account.setType(AccountProtocol.ADMIN);
+            case Protocol.ADMIN:
+                account.setType(Protocol.ADMIN);
                 model.addAttribute("account", account);
                 return "back/index";
             default:
@@ -54,10 +54,28 @@ public class AccountController {
 
     @PostMapping("/register")
     @ResponseBody
-    public String register(JSONObject info) {
+    public String register(@RequestBody JSONObject info) {
+        //  账号信息
         Account account = new Account();
-        account.setAccount((String)info.get("account"));
+        account.setAccount((String) info.get("account"));
+        account.setType(Protocol.USER);
+        account.setPassword((String)info.get("password"));
         System.out.println("account = " + account);
-        return "aaa";
+        //  个人信息
+        UserInfo userInfo = new UserInfo();
+        userInfo.setAccount(account.getAccount());
+        userInfo.setId((String)info.get("id"));
+        userInfo.setAge((int)info.get("age"));
+        userInfo.setSex((int)info.get("sex"));
+        userInfo.setName((String)info.get("name"));
+        //  居住信息
+        Boolean isHere = info.getBoolean("isHere");
+        if (isHere) {
+            AddressInfo addressInfo = new AddressInfo();
+            addressInfo.setApartmentId(info.getString("appartmentId"));
+            addressInfo.setFloor(info.getInteger("floor"));
+            addressInfo.setHomeId(info.getInteger("homeId"));
+        }
+        return null;
     }
 }
