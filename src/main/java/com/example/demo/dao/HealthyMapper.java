@@ -4,6 +4,6 @@ import com.example.demo.entity.Healthy;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface HealhtyMapper {
+public interface HealthyMapper {
     void insertHealthyMapper(Healthy healthy);
 }

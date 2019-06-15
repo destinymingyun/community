@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.AccountMapper">
-    <resultMap id="ResultAccount" type="com.example.demo.entity.Account">
-        <result property="account" column="user_account" javaType="string"></result>
-        <result property="password" column="user_password" javaType="string"></result>
-        <result property="type" column="user_type" javaType="int"></result>
-    </resultMap>
-    <parameterMap id="AccountInfo" type="com.example.demo.entity.Account">
-        <parameter property="account" javaType="string"></parameter>
-        <parameter property="password" javaType="string"></parameter>
-        <parameter property="type" javaType="int"></parameter>
+<mapper namespace="com.example.demo.dao.HealthyMapper">
+    <parameterMap id="Healthy" type="com.example.demo.entity.Healthy">
+        <parameter property="residentId" javaType="string"></parameter>
+        <parameter property="height" javaType="double"></parameter>
+        <parameter property="weight" javaType="double"></parameter>
+        <parameter property="vision" javaType="double"></parameter>
     </parameterMap>
-    <!---->
-    <select id="selectAccount" resultType="int">
-        SELECT user_type FROM user_account
-          WHERE user_account = #{account}
-          AND user_password = #{password};
-    </select>
 
-    <insert id="insertAccount" parameterMap="AccountInfo">
-        INSERT INTO user_account VALUES (#{account}, #{password}, #{type});
+    <insert id="insertHealthyMapper" parameterMap="Healthy">
+        INSERT INTO healthy
+          VALUES (#{residentId}, #{height}, #{weight}, #{vision});
     </insert>
 </mapper>
