@@ -273,7 +273,7 @@
 			}
 		},
 		inherits = helpers.inherits = function(extensions){
-			//Basic javascript inheritance based on the model created in Backbone.js
+			//Basic javascript inheritance based on the entity created in Backbone.js
 			var parent = this;
 			var ChartElement = (extensions && extensions.hasOwnProperty("constructor")) ? extensions.constructor : function(){ return parent.apply(this, arguments); };
 

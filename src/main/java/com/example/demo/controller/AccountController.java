@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.demo.model.Account;
-import com.example.demo.model.AddressInfo;
-import com.example.demo.model.UserInfo;
+import com.example.demo.entity.Account;
+import com.example.demo.entity.AddressInfo;
+import com.example.demo.entity.UserInfo;
 import com.example.demo.protocol.Protocol;
 import com.example.demo.service.AccountService;
+import com.example.demo.service.AddressService;
+import com.example.demo.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,10 @@ import org.springframework.web.bind.annotation.*;
 public class AccountController {
     @Autowired
     private AccountService accountService;
+    @Autowired
+    private UserInfoService userInfoService;
+    @Autowired
+    private AddressService addressService;
 
     /**
      * 登陆
@@ -60,22 +66,28 @@ public class AccountController {
         account.setAccount((String) info.get("account"));
         account.setType(Protocol.USER);
         account.setPassword((String)info.get("password"));
-        System.out.println("account = " + account);
+//        System.out.println("account = " + account);
+        accountService.registerAccount(account);
         //  个人信息
         UserInfo userInfo = new UserInfo();
         userInfo.setAccount(account.getAccount());
         userInfo.setId((String)info.get("id"));
-        userInfo.setAge((int)info.get("age"));
-        userInfo.setSex((int)info.get("sex"));
+        userInfo.setAge(info.getInteger("age"));
+        userInfo.setSex(info.getInteger("sex"));
         userInfo.setName((String)info.get("name"));
+//        System.out.println(userInfo);
+        userInfoService.registerUserInfo(userInfo);
         //  居住信息
         Boolean isHere = info.getBoolean("isHere");
+        System.out.println("isHere = " + isHere);
         if (isHere) {
             AddressInfo addressInfo = new AddressInfo();
+            addressInfo.setId(userInfo.getId());
             addressInfo.setApartmentId(info.getString("appartmentId"));
             addressInfo.setFloor(info.getInteger("floor"));
             addressInfo.setHomeId(info.getInteger("homeId"));
+            addressService.registerAddress(addressInfo);
         }
-        return null;
+        return "ok";
     }
 }

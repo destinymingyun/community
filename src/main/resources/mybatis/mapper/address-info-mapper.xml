@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.AddressInfoMapper">
+    <parameterMap id="AddressInfo" type="com.example.demo.entity.AddressInfo">
+        <parameter property="id" javaType="string"></parameter>
+        <parameter property="apartmentId" javaType="string"></parameter>
+        <parameter property="floor" javaType="int"></parameter>
+        <parameter property="homeId" javaType="int"></parameter>
+    </parameterMap>
+    
+    <insert id="insertAddressInfo" parameterMap="AddressInfo">
+        INSERT INTO user_address
+          VALUES (#{id}, #{apartmentId}, #{floor}, #{homeId})
+    </insert>
+</mapper>
