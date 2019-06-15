@@ -6,5 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface AccountMapper {
     int selectAccount(Account account);
-    int insertAccount(Account account);
+    void insertAccount(Account account);
+    void updatePassword(Account account);
 }

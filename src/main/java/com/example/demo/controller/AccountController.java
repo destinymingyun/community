@@ -90,4 +90,23 @@ public class AccountController {
         }
         return true;
     }
+
+    @PostMapping("/changePassword")
+    @ResponseBody
+    public boolean changePassword(@RequestBody JSONObject info) {
+        Account account = new Account();
+        account.setAccount(info.getString("account"));
+        account.setPassword(info.getString("password"));
+        String newPassword = info.getString("newPassword");
+        accountService.changePassword(account, newPassword);
+        return true;
+    }
+
+    @PostMapping("/admin/changePassword")
+    @ResponseBody
+    public boolean changeUserPassword(Account account) {
+        System.out.println(account);
+        accountService.changeUserPassword(account);
+        return true;
+    }
 }

@@ -8,4 +8,6 @@ import com.example.demo.entity.Account;
 public interface AccountService {
     int login(Account account);
     void registerAccount(Account account);
+    void changePassword(Account account, String newPassword);
+    void changeUserPassword(Account account);
 }

@@ -199,7 +199,10 @@
             contentType: "application/json",
             data: JSON.stringify(info),
             success: function (data) {
-
+                if (data == true) {
+                    alert("注册成功");
+                    window.location.href = "/login";
+                }
             }
         });
     });

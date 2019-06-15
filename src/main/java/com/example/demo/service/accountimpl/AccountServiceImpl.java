@@ -26,4 +26,16 @@ public class AccountServiceImpl implements AccountService {
     public void registerAccount(Account account) {
         accountMapper.insertAccount(account);
     }
+
+    @Override
+    public void changePassword(Account account, String newPassword) {
+        accountMapper.selectAccount(account);
+        account.setPassword(newPassword);
+        accountMapper.updatePassword(account);
+    }
+
+    @Override
+    public void changeUserPassword(Account account) {
+        accountMapper.updatePassword(account);
+    }
 }

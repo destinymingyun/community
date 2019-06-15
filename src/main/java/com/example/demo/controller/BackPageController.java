@@ -20,6 +20,16 @@ public class BackPageController {
         return "back/register";
     }
 
+    @GetMapping("/changePassword")
+    public String changePassword() {
+        return "/back/change-password";
+    }
+
+    @GetMapping("/changeUserPassword")
+    private String changeUserPassword() {
+        return "/back/change-user-password";
+    }
+
     /**
      * 获取居民信息
      *

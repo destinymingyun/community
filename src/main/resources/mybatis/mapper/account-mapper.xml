@@ -19,6 +19,13 @@
     </select>
 
     <insert id="insertAccount" parameterMap="AccountInfo">
-        INSERT INTO user_account VALUES (#{account}, #{password}, #{type});
+        INSERT INTO user_account
+        VALUES (#{account}, #{password}, #{type});
     </insert>
+
+    <update id="updatePassword" parameterMap="AccountInfo">
+        UPDATE user_account
+        SET user_password = #{password}
+        WHERE user_account = #{account};
+    </update>
 </mapper>

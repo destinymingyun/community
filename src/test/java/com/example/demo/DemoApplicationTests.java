@@ -68,4 +68,15 @@ public class DemoApplicationTests {
         healthy.setVision(5.2);
         healthyMapper.insertHealthyMapper(healthy);
     }
+
+    @Test
+    public void testChangePassowrd() {
+        Account account = new Account();
+        account.setAccount("admin@qq.com");
+        account.setPassword("123456");
+        accountMapper.selectAccount(account);
+        account.setPassword("12345678");
+
+        accountMapper.updatePassword(account);
+    }
 }
