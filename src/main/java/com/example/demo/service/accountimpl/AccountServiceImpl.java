@@ -1,4 +1,4 @@
-package com.example.demo.service.accountImpl;
+package com.example.demo.service.accountimpl;
 
 import com.example.demo.dao.AccountMapper;
 import com.example.demo.entity.Account;

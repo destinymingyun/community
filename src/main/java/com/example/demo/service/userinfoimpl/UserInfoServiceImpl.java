@@ -1,4 +1,4 @@
-package com.example.demo.service.userinfoImpl;
+package com.example.demo.service.userinfoimpl;
 
 import com.example.demo.dao.UserInfoMapper;
 import com.example.demo.entity.UserInfo;

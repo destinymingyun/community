@@ -60,7 +60,7 @@ public class AccountController {
 
     @PostMapping("/register")
     @ResponseBody
-    public String register(@RequestBody JSONObject info) {
+    public Boolean register(@RequestBody JSONObject info) {
         //  账号信息
         Account account = new Account();
         account.setAccount((String) info.get("account"));
@@ -88,6 +88,6 @@ public class AccountController {
             addressInfo.setHomeId(info.getInteger("homeId"));
             addressService.registerAddress(addressInfo);
         }
-        return "ok";
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.service.addressserviceImpl;
+package com.example.demo.service.addressserviceimpl;
 
 import com.example.demo.dao.AddressInfoMapper;
 import com.example.demo.entity.AddressInfo;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.DisputeMapper">
+    <parameterMap id="Dispute" type="com.example.demo.entity.Account">
+        <parameter property="adminAccount" javaType="string"></parameter>
+        <parameter property="summary" javaType="string"></parameter>
+        <parameter property="id" javaType="int"></parameter>
+    </parameterMap>
+
+
+    <insert id="insertDisputeInfo" parameterMap="Dispute">
+        INSERT INTO dispute_info VALUES (#{id}, #{summary}, #{adminAccount});
+    </insert>
+</mapper>

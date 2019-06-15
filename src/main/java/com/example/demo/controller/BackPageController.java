@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  */
 @Controller
 public class BackPageController {
+
     @GetMapping("/login")
     public String goLogin() {
         return "back/login";

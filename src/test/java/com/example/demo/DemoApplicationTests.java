@@ -1,8 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.dao.AccountMapper;
+import com.example.demo.dao.DisputeMapper;
 import com.example.demo.dao.UserInfoMapper;
 import com.example.demo.entity.Account;
+import com.example.demo.entity.DisputeInfo;
 import com.example.demo.entity.UserInfo;
 import com.example.demo.protocol.Protocol;
 import org.junit.Test;
@@ -16,6 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DemoApplicationTests {
     @Autowired AccountMapper accountMapper;
     @Autowired UserInfoMapper userInfoMapper;
+    @Autowired DisputeMapper disputeMapper;
     @Test
     public void contextLoads() {
         System.out.println("状态:"+ (Protocol.USER | Protocol.SUCCESS));
@@ -42,5 +45,13 @@ public class DemoApplicationTests {
         userInfo.setSex(1);
         userInfo.setAge(10);
         userInfoMapper.insertUserInfo(userInfo);
+    }
+
+    @Test
+    public void testDisputeInfo() {
+        DisputeInfo disputeInfo = new DisputeInfo();
+        disputeInfo.setAdminAccount("123@qq.com");
+        disputeInfo.setSummary("两人当众打架，不如跳舞");
+        disputeMapper.insertDisputeInfo(disputeInfo);
     }
 }
