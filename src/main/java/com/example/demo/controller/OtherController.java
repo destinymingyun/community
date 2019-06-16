@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Healthy;
 import com.example.demo.entity.Person;
+import com.example.demo.protocol.Protocol;
 import com.example.demo.service.HealthyService;
 import com.example.demo.service.IdentityService;
 import com.example.demo.service.healthyserviceimpl.HealthyServiceImpl;
@@ -31,7 +32,7 @@ public class OtherController {
 
     @GetMapping("/getVolunteer")
     @ResponseBody
-    public List<Person> getVolunteer() {
-        identityService
+    public List<Person> getVolunteers() {
+        return identityService.getPersonByOccupation(Protocol.VOLUNTEER);
     }
 }

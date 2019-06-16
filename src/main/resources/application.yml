@@ -1,6 +1,6 @@
 # 服务器基本配置
 server:
-  port: 8080
+  port: 12345
 
 
 # spring 基本配置

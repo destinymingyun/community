@@ -88,6 +88,7 @@ public class DemoApplicationTests {
     public void testStatus() {
         //  失业 和 志愿者 和应该为3
         System.out.println(Protocol.VOLUNTEER | Protocol.UNEMPLOYED);
+        System.out.println(Protocol.VOLUNTEER & 3);
     }
 
     @Test
