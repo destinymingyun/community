@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
@@ -53,7 +55,7 @@ public class DemoApplicationTests {
     public void testDisputeInfo() {
         DisputeInfo disputeInfo = new DisputeInfo();
         disputeInfo.setAdminAccount("123@qq.com");
-        disputeInfo.setSummary("两人当众打架，不如跳舞");
+        disputeInfo.setSummary("两人与其打架，不如跳舞");
         disputeMapper.insertDisputeInfo(disputeInfo);
     }
 
@@ -66,7 +68,9 @@ public class DemoApplicationTests {
         healthy.setWeight(70);
         healthy.setResidentId("123456789012345678");
         healthy.setVision(5.2);
-        healthyMapper.insertHealthyMapper(healthy);
+//      healthyMapper.insertHealthyMapper(healthy);
+        healthy = healthyMapper.selectHealthyById("123456789012345678");
+        System.out.println("healthy = " + healthy);
     }
 
     @Test
@@ -78,5 +82,19 @@ public class DemoApplicationTests {
         account.setPassword("12345678");
 
         accountMapper.updatePassword(account);
+    }
+
+    @Test
+    public void testStatus() {
+        //  失业 和 志愿者 和应该为3
+        System.out.println(Protocol.VOLUNTEER | Protocol.UNEMPLOYED);
+    }
+
+    @Test
+    public void testHealthy2() {
+        List<Healthy> healthies = healthyMapper.selectAll();
+        for (Healthy healthy : healthies) {
+            System.out.println(healthy);
+        }
     }
 }

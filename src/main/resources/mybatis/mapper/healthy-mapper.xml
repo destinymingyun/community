@@ -7,9 +7,24 @@
         <parameter property="weight" javaType="double"></parameter>
         <parameter property="vision" javaType="double"></parameter>
     </parameterMap>
+    <resultMap id="ResuHealthy" type="com.example.demo.entity.Healthy">
+        <result property="residentId" column="resident_id" javaType="string"></result>
+        <result property="height" column="height" javaType="double"></result>
+        <result property="weight" column="weight" javaType="double"></result>
+        <result property="vision" column="vision" javaType="double"></result>
+    </resultMap>
 
     <insert id="insertHealthyMapper" parameterMap="Healthy">
         INSERT INTO healthy
           VALUES (#{residentId}, #{height}, #{weight}, #{vision});
     </insert>
+
+    <select id="selectHealthyById" parameterType="string" resultMap="ResuHealthy">
+        SELECT * FROM healthy
+          WHERE resident_id = #{residentId};
+    </select>
+
+    <select id="selectAll" resultMap="ResuHealthy">
+        SELECT * FROM healthy;
+    </select>
 </mapper>

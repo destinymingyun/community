@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Account;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * 后台页面映射
@@ -55,7 +59,7 @@ public class BackPageController {
      */
     @GetMapping("/healthyInfo")
     public String healthyInfo() {
-        return "back/healthyInfo";
+        return "back/healthy-info";
     }
 
     /**

@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * 账号登陆控制
  */
@@ -32,7 +34,7 @@ public class AccountController {
      * @return 登陆成功登陆后的页面或登陆失败返回登陆页面
      */
     @PostMapping("/loginAccount")
-    public String login(Account account, Model model) {
+    public String login(Account account, Model model, HttpSession session) {
         int type = accountService.login(account);
         switch (type) {
             case Protocol.ERROR:
@@ -40,10 +42,12 @@ public class AccountController {
             case Protocol.USER:
                 account.setType(Protocol.USER);
                 model.addAttribute("account", account);
+                session.setAttribute("account", account.getAccount());
                 return "face/index";
             case Protocol.ADMIN:
                 account.setType(Protocol.ADMIN);
                 model.addAttribute("account", account);
+                session.setAttribute("account", account.getAccount());
                 return "back/index";
             default:
                 return "back/login";

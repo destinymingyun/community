@@ -5,9 +5,24 @@
         <parameter property="id" javaType="string"></parameter>
         <parameter property="occupation" javaType="int"></parameter>
     </parameterMap>
+    <resultMap id="ResuPerson" type="com.example.demo.entity.Person">
+        <result property="id" javaType="string" column="id"></result>
+        <result property="occupation" javaType="int" column="occupation"></result>
+    </resultMap>
     <!---->
     <insert id="insertIdentity" parameterMap="Person">
         INSERT INTO person
-        VALUES (#{id}, #{occupation});
+          VALUES (#{id}, #{occupation});
     </insert>
+
+    <update id="updateIdentity" parameterMap="Person">
+        UPDATE person
+          SET occupation = #{occupation}
+          WHERE id = #{id};
+    </update>
+
+    <select id="selecltIdentityById" parameterType="string" resultMap="ResuPerson">
+        SELECT * FROM person
+          WHERE id = #{id};
+    </select>
 </mapper>
