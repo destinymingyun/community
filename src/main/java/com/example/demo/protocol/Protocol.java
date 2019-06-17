@@ -19,7 +19,7 @@ public class Protocol {
     //  身份状态码
     public static final int VOLUNTEER   = 0b0000_0000_0000_0001; // 志愿者
     public static final int UNEMPLOYED  = 0b0000_0000_0000_0010; // 失业的
-    public static final int THE_TRAINED = 0b0000_0000_0000_1000; // 受培训的
-    public static final int DISABLED    = 0b0000_0000_0001_0000; // 残疾的
-    public static final int POOLED      = 0b0000_0000_0010_0000; //  领低保的
+    public static final int THE_TRAINED = 0b0000_0000_0000_0100; // 受培训的
+    public static final int DISABLED    = 0b0000_0000_0000_1000; // 残疾的
+    public static final int POOLED      = 0b0000_0000_0001_0000; //  领低保的
 }

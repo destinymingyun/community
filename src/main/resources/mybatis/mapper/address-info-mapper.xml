@@ -5,11 +5,21 @@
         <parameter property="id" javaType="string"></parameter>
         <parameter property="apartmentId" javaType="string"></parameter>
         <parameter property="floor" javaType="int"></parameter>
-        <parameter property="homeId" javaType="int"></parameter>
+        <parameter property="" javaType="int"></parameter>
     </parameterMap>
+    <resultMap id="ResuAddressInfo" type="com.example.demo.entity.AddressInfo">
+        <result property="id" javaType="string" column="user_id"></result>
+        <result property="apartmentId" javaType="string" column="user_apartment_id"></result>
+        <result property="floor" javaType="int" column="user_apartment_floor"></result>
+        <result property="homeId" javaType="int" column="user_home_id"></result>
+    </resultMap>
     
     <insert id="insertAddressInfo" parameterMap="AddressInfo">
         INSERT INTO user_address
           VALUES (#{id}, #{apartmentId}, #{floor}, #{homeId})
     </insert>
+
+    <select id="selectAllAddress" resultMap="ResuAddressInfo">
+        SELECT * FROM user_address;
+    </select>
 </mapper>

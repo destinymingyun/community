@@ -6,6 +6,8 @@ import com.example.demo.service.DisputeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DisputeServiceImpl implements DisputeService {
     @Autowired
@@ -13,5 +15,10 @@ public class DisputeServiceImpl implements DisputeService {
     @Override
     public void addDisputeInfo(DisputeInfo disputeInfo) {
         disputeMapper.insertDisputeInfo(disputeInfo);
+    }
+
+    @Override
+    public List<DisputeInfo> getAllSecurityLog() {
+        return disputeMapper.selectAll();
     }
 }

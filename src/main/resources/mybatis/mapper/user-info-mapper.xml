@@ -8,9 +8,20 @@
         <parameter property="sex" javaType="int"></parameter>
         <parameter property="account" javaType="string"></parameter>
     </parameterMap>
+    <resultMap id="ResuUserInfo" type="com.example.demo.entity.UserInfo">
+        <result property="id" column="user_id" javaType="string"></result>
+        <result property="name" column="user_name" javaType="string"></result>
+        <result property="sex" column="user_sex" javaType="int"></result>
+        <result property="age" column="user_age" javaType="int"></result>
+        <result property="account" column="user_account" javaType="string"></result>
+    </resultMap>
     
     <insert id="insertUserInfo" parameterMap="UserInfo">
         INSERT INTO user_info
           VALUES (#{id}, #{account}, #{name}, #{sex}, #{age})
     </insert>
+
+    <select id="selectUserInfoById" resultMap="ResuUserInfo">
+        SELECT * FROM user_info WHERE user_id = #{id};
+    </select>
 </mapper>

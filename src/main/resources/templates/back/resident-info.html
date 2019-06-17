@@ -163,13 +163,13 @@
 		<div id="page-wrapper">
 			<div class="main-page">
 				<div class="tables">
-					<h2 class="title1">志愿者信息</h2>
+					<h2 class="title1">居民信息</h2>
 					<div class="bs-example widget-shadow" data-example-id="contextual-table">
-						<h4>志愿表:</h4>
+						<h4>已登记在此居住业主信息:</h4>
 						<table class="table">
 							<thead>
 								<tr>
-									<th>#</th> <th>身份证</th> <th>姓名</th> <th>年龄</th> <th>性别</th>
+									<th>#</th> <th>业主身份证</th> <th>单元楼</th> <th>层</th> <th>房间</th>
 								</tr>
 							</thead>
 							<tbody id="info">
@@ -232,23 +232,21 @@
 	<script>
         $(document).ready(function () {
             $.get({
-                url: "/getOccupation",
+                url: "/getResidentInfo",
 				dataType: "json",
 				data: {
-                    "occupation": 1,
+                    "occupation": 8,
 				},
-                success: function (volunteers) {
+                success: function (users) {
                     var i = 1;  //  图片循环变量
-                    volunteers.forEach(
-                        function (volunteer) {
-                            var sex = ["男", "女"]
-                            volunteer.sex = sex[volunteer.sex];
+                    users.forEach(
+                        function (user) {
                             $("#info").append(
                                 "<tr><th scope=\"row\">"+i+"</th>\n" +
-                                "\t\t\t\t\t\t\t\t<td>"+volunteer.id+"</td>\n" +
-                                "\t\t\t\t\t\t\t\t<td>"+volunteer.name+"</td>\n" +
-                                "\t\t\t\t\t\t\t\t<td>"+volunteer.age+"</td>\n" +
-                                "\t\t\t\t\t\t\t\t<td>"+volunteer.sex+"</td></tr>"
+                                "\t\t\t\t\t\t\t\t<td>"+user.id+"</td>\n" +
+                                "\t\t\t\t\t\t\t\t<td>"+user.apartmentId+"</td>\n" +
+                                "\t\t\t\t\t\t\t\t<td>"+user.floor+"</td>\n" +
+                                "\t\t\t\t\t\t\t\t<td>"+user.homeId+"</td></tr>"
                             );
                             i++;
                         }

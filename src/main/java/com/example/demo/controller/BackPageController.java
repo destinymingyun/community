@@ -1,12 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Account;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.servlet.http.HttpSession;
 
 /**
  * 后台页面映射
@@ -84,7 +79,12 @@ public class BackPageController {
      */
     @GetMapping("/tranWork")
     public String tranWork() {
-        return "back/trunWork";
+        return "back/trun-work";
+    }
+
+    @GetMapping("/disabled")
+    public String disabled() {
+        return "/back/disabled";
     }
 
     /**
@@ -92,6 +92,40 @@ public class BackPageController {
      */
     @GetMapping("/subsistenceAllowances")
     public String subsistenceAllowances() {
-        return "back/subsistenceAllowances";
+        return "back/subsistence-allowances";
+    }
+
+    /**
+     * 残疾页面
+     * @return
+     */
+    @GetMapping("/disable")
+    public String disable() {
+        return "back/disable";
+    }
+
+    /**
+     * 团队页面laid-off.html
+     * @return
+     */
+    @GetMapping("/team")
+    public String team() {
+        return "back/team";
+    }
+
+    /**
+     * 修改用户身份
+     */
+    @GetMapping("changeIdentity")
+    public String changeIdentity() {
+        return "back/change-identity";
+    }
+
+    /**
+     * 后台主页
+     */
+    @GetMapping("/backIndex")
+    public String backIndek() {
+        return "back/index";
     }
 }

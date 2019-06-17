@@ -87,8 +87,8 @@ public class DemoApplicationTests {
     @Test
     public void testStatus() {
         //  失业 和 志愿者 和应该为3
-        System.out.println(Protocol.VOLUNTEER | Protocol.UNEMPLOYED);
-        System.out.println(Protocol.VOLUNTEER & 3);
+        System.out.println(Protocol.VOLUNTEER | Protocol.POOLED);
+        System.out.println(Protocol.POOLED & 31);
     }
 
     @Test

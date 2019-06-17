@@ -9,6 +9,6 @@ import java.util.List;
 public interface IdentityMapper {
     void insertIdentity(Person person);
     void updateIdentity(Person person);
-    Person selecltIdentityById(String id);
+    Person selectIdentityById(String id);
     List<Person> selectAllIdentity();
 }

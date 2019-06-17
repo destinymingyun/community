@@ -21,6 +21,10 @@
           WHERE id = #{id};
     </update>
 
+    <select id="selectAllIdentity" resultMap="ResuPerson">
+        SELECT * FROM person;
+    </select>
+
     <select id="selecltIdentityById" parameterType="string" resultMap="ResuPerson">
         SELECT * FROM person
           WHERE id = #{id};

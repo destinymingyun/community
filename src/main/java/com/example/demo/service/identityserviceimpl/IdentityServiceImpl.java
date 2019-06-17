@@ -1,8 +1,9 @@
 package com.example.demo.service.identityserviceimpl;
 
 import com.example.demo.dao.IdentityMapper;
+import com.example.demo.dao.UserInfoMapper;
 import com.example.demo.entity.Person;
-import com.example.demo.protocol.Protocol;
+import com.example.demo.entity.UserInfo;
 import com.example.demo.service.IdentityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import java.util.List;
 public class IdentityServiceImpl implements IdentityService {
     @Autowired
     private IdentityMapper identityMapper;
+    @Autowired
+    private UserInfoMapper userInfoMapper;
     @Override
     public void createIdentityInfo(Person person) {
         identityMapper.insertIdentity(person);
@@ -34,18 +37,18 @@ public class IdentityServiceImpl implements IdentityService {
      */
     @Override
     public void plusIdentityInfo(Person person) {
-        Person person1 = identityMapper.selecltIdentityById(person.getId());
+        Person person1 = identityMapper.selectIdentityById(person.getId());
         person1.setOccupation(person1.getOccupation() | person.getOccupation() );
         identityMapper.updateIdentity(person1);
     }
 
     @Override
-    public List<Person> getPersonByOccupation(int occupation) {
+    public List<UserInfo> getPersonByOccupation(int occupation) {
         List<Person> people = identityMapper.selectAllIdentity();
-        List<Person> occcupationPeople = new ArrayList<>();
+        List<UserInfo> occcupationPeople = new ArrayList<>();
         for (Person person : people) {
             if ((person.getOccupation() & occupation) == occupation) {
-                occcupationPeople.add(person);
+                occcupationPeople.add(userInfoMapper.selectUserInfoById(person.getId()));
             }
         }
         return occcupationPeople;
